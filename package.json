@@ -10,7 +10,7 @@
     "server-install": "cd server && npm install",
     "client-install": "cd client && npm install",
     "install": "npm run server-install && npm run client-install",
-    "build": "cd client && npm run build",
+    "build": "npm run install && cd client && npm run build",
     "start": "cd server && npm start"
   },
   "repository": {
