@@ -131,7 +131,7 @@ export default function Chat() {
 
   const [newMessage, setNewMessage] = useState(null);
 
-  const socket = useRef(io('http://localhost:8080'));
+  const socket = useRef(io());
 
   useEffect(async () => {
     if (selectedIndex) {
@@ -142,7 +142,7 @@ export default function Chat() {
   }, [selectedIndex]);
 
   useEffect(async () => {
-    socket.current = io('http://localhost:8080');
+    socket.current = io();
     socket.current.on('getMessage', async (data) => {
       const message = await fetchMessage.fetchMessage(data.messageID);
       setNewMessage(message);
