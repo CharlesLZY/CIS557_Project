@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { FixedSizeList } from 'react-window';
 
 import { makeStyles } from '@mui/styles';
@@ -77,7 +78,7 @@ const useStyles = makeStyles({
 
 export default function MemberBar({ group, userID }) {
   const classes = useStyles();
-
+  const navigate = useNavigate();
   const [input, setInput] = useState('');
 
   const handleReset = () => {

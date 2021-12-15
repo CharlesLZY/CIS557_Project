@@ -97,7 +97,8 @@ async function deletePosts(posts) {
 }
 
 async function quitPublicGroups(groups, userID) {
-  for (let i = 0; i < groups.length; i = 1 + 1) {
+  for (let i = 0; i < groups.length; i = i + 1) {
+    
     const group = await PublicGroup.findOne({ id: groups[i] });
     if (group.creator === userID) {
       if (group.admins.length > 1) { // assign the ownership to an admin
@@ -123,7 +124,7 @@ async function quitPublicGroups(groups, userID) {
         );
         await notify(userID, groups[i], 'public');
       } else { // delete the group
-        for (let j = 0; j < group.posts.length; j += 1) { // delete posts first
+        for (let j = 0; j < group.posts.length; j = j + 1) { // delete posts first
           const postID = group.posts[j];
           const post = await PublicPost.findOne({ _id: postID });
           if (post !== null) {
@@ -135,8 +136,8 @@ async function quitPublicGroups(groups, userID) {
             await PublicPost.deleteOne({ _id: postID });
           }
         }
-
         await PublicGroup.deleteOne({ id: groups[i] });
+        
       }
     } else {
       await PublicGroup.updateOne(
@@ -152,7 +153,7 @@ async function quitPublicGroups(groups, userID) {
 }
 
 async function quitPrivateGroups(groups, userID) {
-  for (let i = 0; i < groups.length; i = 1 + 1) {
+  for (let i = 0; i < groups.length; i = i + 1) {
     const group = await PrivateGroup.findOne({ id: groups[i] });
     if (group.creator === userID) {
       if (group.admins.length > 1) { // assign the ownership to an admin
@@ -178,7 +179,7 @@ async function quitPrivateGroups(groups, userID) {
         );
         await notify(userID, groups[i], 'private');
       } else { // delete the group
-        for (let j = 0; j < group.posts.length; j += 1) { // delete posts first
+        for (let j = 0; j < group.posts.length; j = j + 1) { // delete posts first
           const postID = group.posts[j];
           const post = await PrivatePost.findOne({ _id: postID });
           if (post !== null) {
