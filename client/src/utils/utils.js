@@ -23,8 +23,8 @@ export function checkFile(file) {
     return true;
   }
   const supportFileType = ['image/jpeg', 'image/png', 'image/jpg', 'image/gif', 'video/mp4', 'audio/mpeg'];
-  // fize size limitation: 15 MB
-  if (file.size > 15 * 1024 * 1024) {
+  // fize size limitation: 30 MB
+  if (file.size > 30 * 1024 * 1024) {
     return false;
   }
   if (supportFileType.indexOf(file.type) < 0) {

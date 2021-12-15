@@ -70,11 +70,11 @@ export default function Register() {
     setRepeatPasswordError(false);
     if (!utils.checkString(username) || !utils.checkUsername(username)) {
       setUsernameError(true);
-      setHelperText('Invalid username.');
+      setHelperText('Invalid username. Must be at least 3 characters and start with letter.');
     } else if (!utils.checkString(password) || !utils.checkPassword(password)) {
       setPasswordError(true);
       setRepeatPasswordError(true);
-      setHelperText('Invalid password.');
+      setHelperText('Invalid password. Must be at least 8 characters and contain numbers and lowercase & uppercase letters.');
     } else if (password === repeatPassword) {
       const res = await fetchUser.register(username, password);
       if (res === 201) {

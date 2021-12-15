@@ -62,7 +62,7 @@ export default function Layout({ children }) {
             component="div"
             sx={{ marginLeft: '10px', flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            TEAM 14
+            PIE
           </Typography>
 
           <Search>

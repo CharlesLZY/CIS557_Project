@@ -188,7 +188,7 @@ export default function WritePost() {
                   setInfo('');
                 } else {
                   setFile(null);
-                  setInfo('Invalid attachment.');
+                  setInfo('Invalid attachment. Only accept JPG/JEPG/PNG/GIF/MP3/MP4(<= 30MB).');
                 }
               }
             }

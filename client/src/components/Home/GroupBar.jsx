@@ -65,7 +65,7 @@ export default function GroupBar({ groups, userInfo }) {
   const [chip, setChip] = useState(['test']);
   const [open, setOpen] = useState(false);
   const [type, setType] = useState('member');
-  const [IamIn, setIamIn] = useState('Yes');
+  const [IamIn, setIamIn] = useState('N/A');
   const [order, setOrder] = useState('desc');
 
   const handleSelect1 = (event) => {

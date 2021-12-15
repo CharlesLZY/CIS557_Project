@@ -91,7 +91,7 @@ const useStyles = makeStyles({
 
   modal: {
     paddingTop: 50,
-    width: 400,
+    width: 500,
     height: 100,
     textAlign: 'center',
     margin: 0,
@@ -215,7 +215,7 @@ export default function Chat() {
         setInfo(`You can not send message to ${chatTo}.`);
         setInfoModal(true);
       } else {
-        console.log(selectedIndex);
+        
         res = await fetchMessage.sendMessage(userID, chatTo, text, null, 'text', selectedIndex);
         if (res === 404) {
           setInfo('Error');
@@ -388,7 +388,7 @@ export default function Chat() {
                 setFile(file);
               } else if (file) {
                 setInfoModal(true);
-                setInfo('Invalid File');
+                setInfo('Invalid File. Only accept JPG/JEPG/PNG/GIF.');
               }
             }
           }
@@ -407,7 +407,7 @@ export default function Chat() {
                 setFile(file);
               } else if (file) {
                 setInfoModal(true);
-                setInfo('Invalid File');
+                setInfo('Invalid File. Only accept MP3(<= 15MB).');
               }
             }
           }
@@ -426,7 +426,7 @@ export default function Chat() {
                 setFile(file);
               } else if (file) {
                 setInfoModal(true);
-                setInfo('Invalid File');
+                setInfo('Invalid File. Only accept MP4(<= 15MB).');
               }
             }
           }
