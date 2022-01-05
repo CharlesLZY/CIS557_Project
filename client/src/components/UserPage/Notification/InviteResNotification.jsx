@@ -38,7 +38,7 @@ export default function InviteResNotification({ notification, userID }) {
       </IconButton>
       <div className={classes.content}>
         <Typography variant="h6" color="secondary">
-          {notification.from}
+          {notification.from}&thinsp;
         </Typography>
         <Typography variant="h6">
           {notification.status}
